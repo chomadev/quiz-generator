@@ -6,7 +6,7 @@ import Question from "./Question";
 export default function Questions(props: { questions: QuestionModel[], showAnswers: boolean }) {
     return (<div className="flex flex-col gap-4">
         {props.questions && props.questions.map((question: QuestionModel, index: number) => <>
-            <div>
+            <div key={`question_${index}`}>
                 <Question question={question} index={index} showAnswers={props.showAnswers} />
             </div>
         </>)}

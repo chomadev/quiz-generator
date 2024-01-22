@@ -19,8 +19,10 @@ export default function Question({ index, question, showAnswers }: QuestionProps
     return (<>
         <p>{index + 1} - {question.question}</p>
         <ul>
-            {Object.keys(question.options).map(option => (
-                <li className={!!showAnswers ? (isCorrect ? "text-green-400" : "text-red-400") : ""}>
+            {Object.keys(question.options).map((option, alternativeIndex) => (
+                <li
+                    key={`queston_${index}_alternative_${alternativeIndex}`}
+                    className={!!showAnswers ? (isCorrect ? "text-green-400" : "text-red-400") : ""}>
                     <input
                         type="radio"
                         value={option}
