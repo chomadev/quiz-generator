@@ -16,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} flex flex-col min-h-screen justify-between items-center`}>
+        <header>
+          <h2 className="text-2xl m-10">Quiz generator!</h2>
+        </header>
+        {children}
+        <footer>Created by Marcos Braga Choma - 2024</footer>
+      </body>
     </html>
   );
 }
